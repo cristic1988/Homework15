@@ -6,24 +6,27 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MatrixTest {
 
+    Matrix matrix;
+
     @BeforeEach
     void setUp() {
+        matrix = new Matrix();
     }
 
     @AfterEach
     void tearDown() {
+        matrix = null;
     }
 
     @Test
     void avgArray() {
-        Matrix matrix = new Matrix();
-//        int[] array = new int[];
-//        assertEquals(matrix.avgArray(array));
+//        Matrix matrix = new Matrix();
+        int[] array = new int[] {1,2,3,4,5};
+        assertEquals(3.0, matrix.avgArray(array));
     }
 
     @Test
     void isSquareMatrix() {
-        Matrix matrix = new Matrix();
         int[][] matrix1 = new int[5][5];
         assertTrue(matrix.isSquareMatrix(matrix1));
 
@@ -31,7 +34,6 @@ class MatrixTest {
 
     @Test
     void isSquareMatrixTeeth() {
-        Matrix matrix = new Matrix();
         int[][] matrix2 = new int[][]{{1, 2, 3}, {1, 2, 3, 4}, {1, 2, 3}};
         assertFalse(matrix.isSquareMatrix(matrix2));
 
@@ -39,19 +41,16 @@ class MatrixTest {
 
     @Test
     void isSquareMatrixZero() {
-        Matrix matrix = new Matrix();
         int[][] matrix3 = new int[0][0];
         assertFalse(matrix.isSquareMatrix(matrix3));
     }
     @Test
     void isSquareMatrixNull() {
-        Matrix matrix = new Matrix();
         int[][] matrix4 = null;
         assertFalse(matrix.isSquareMatrix(matrix4));
     }
     @Test
     void isSquareMatrixNo() {
-        Matrix matrix = new Matrix();
         int[][] matrix5 = new int[5][8];
         assertFalse(matrix.isSquareMatrix(matrix5));
     }
