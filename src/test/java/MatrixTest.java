@@ -20,7 +20,6 @@ class MatrixTest {
 
     @Test
     void avgArray() {
-//        Matrix matrix = new Matrix();
         int[] array = new int[] {1,2,3,4,5};
         assertEquals(3.0, matrix.avgArray(array));
     }
